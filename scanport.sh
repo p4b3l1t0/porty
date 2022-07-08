@@ -1,4 +1,4 @@
-kkk#!/bin/bash
+#!/bin/bash
 
 #  Version : 1.0
 #  Author : Pablo Salinas
@@ -37,7 +37,8 @@ then
                 bash -c "echo  $'\e[1;35m'[*]$'\e[0m' port scan over $port in progress"
                 #Scans ports displays open ports
                 for port in $(seq 1 65536); do
-                        timeout 1 bash -c "echo > /dev/tcp/$target/$port" >/dev/null 2>&1 && bash -c "echo    $target,$port,open " >> $target.csv && bash -c "echo    $'\e[1;32m'             [+] $port $'\e[0m' --is open"  &
+                        timeout 1 bash -c "echo > /dev/tcp/$target/$port" >/dev/null 2>&1 && bash -c "echo    $target,$port,open " >> $target.csv && bash -c "echo    $'\e[1;32m'             [+] $port $'\e[0m' --is open"  ||
+    bash -c "echo    $'\e[1;33m'             [+] $port $'\e[0m' --is closed" &
                 done
                     }
         scan
@@ -45,7 +46,7 @@ echo ""
 echo "Results in >>> $target.csv"
 else
         echo "************************************************************************"
-        bash -c "echo $'\e[1;36m'[-]$'\e[0m'  The IP or domain does not exist"
+        bash -c "echo $'\e[1;33m'[-]$'\e[0m'  The IP or domain does not exist"
         exit
 
 fi
