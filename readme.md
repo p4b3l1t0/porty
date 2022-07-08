@@ -1,5 +1,5 @@
 ### This is an script to scan ports over a domain or IP.
-####### This script is designed for educational purposes. Use with responsability
+###### This script is designed for educational purposes. Use with responsability
 
 **Usage**: 
 
