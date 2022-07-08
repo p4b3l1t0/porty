@@ -3,7 +3,7 @@
 
 **Usage**: 
 
-    git clone https://github.com/p4b3l1t0/porty.git && mv porty
+    git clone https://github.com/p4b3l1t0/porty.git && cd porty
   
   ######
   
